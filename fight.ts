@@ -1,13 +1,13 @@
 import { Character } from "./Character.ts"
 
-const Attack = (_chara : Character) : void => {
-    console.log(_chara.name)
+const Attack = (chara : Character, _chara_list : Character[]) : void => {
+    console.log(chara.name)
 }
 
-const Speed_def = (chara : Character[], indice_spe : number) : Character[] | null => {
+const Speed_def = (chara_list : Character[], indice_spe : number) : Character[] | null => {
     const ret_tab = []
     let iselem = false
-    for (const element of chara) {
+    for (const element of chara_list) {
         if (element.speed === indice_spe) {
             ret_tab.push(element)
             iselem = true
@@ -20,17 +20,16 @@ const Speed_def = (chara : Character[], indice_spe : number) : Character[] | nul
     }
 }
 
-const _Fight = (chara : Character[]) : number => {
+const Fight = (chara_list : Character[]) : void => {
     let indice_spe = 100
     for (indice_spe = 100; indice_spe > 0; indice_spe--) {
-        const buf = Speed_def(chara, indice_spe)
+        const buf = Speed_def(chara_list, indice_spe)
         if (buf) {
             for (const element of buf) {
-                Attack(element)
+                Attack(element, chara_list)
             }
         }
     }
-    return 0
 }
 
     const warrior = new Character("Adorn the Brave", 20, 5, 20, 150, 150);
@@ -40,4 +39,4 @@ const _Fight = (chara : Character[]) : number => {
     const priest = new Character("Dorina the Kind", 10, 10, 20, 150, 150);
     const robber = new Character("Calvin the Swift", 30, 5, 30, 120, 120);
     const charalist = [warrior, paladin, mage, barbarian, priest, robber]
-    _Fight(charalist)
+    Fight(charalist)
