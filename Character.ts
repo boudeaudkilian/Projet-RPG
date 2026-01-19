@@ -34,34 +34,34 @@ class Paladin extends Character {
         if (this.manaCurrent < 30) {
             console.log(`${this.name} utilise Demacia: apres avoir crier "Demacia!!" le paladin fait tomber un epée magique géante sur les enemie leur infligeant des dégâts !`);
             this.manaCurrent -= 30;
-            warrior.healthCurrent -= (this.attackMagic - warrior.deffensePhysic) * 0.4;
-            barbarian.healthCurrent -= (this.attackMagic - barbarian.deffensePhysic) * 0.4;
-            console.log(`Dégâts infligés à ${warrior.name} : ${(this.attackMagic - warrior.deffensePhysic) * 0.4}`);
-            console.log(`Dégâts infligés à ${barbarian.name} : ${(this.attackMagic - barbarian.deffensePhysic) * 0.4}`);
+            mechants.healthCurrent -= (this.attackMagic - warrior.deffensePhysic) * 0.4;
+            boss.healthCurrent -= (this.attackMagic - barbarian.deffensePhysic) * 0.4;
+            console.log(`Dégâts infligés à ${mechants.name} : ${(this.attackMagic - mechants.deffensePhysic) * 0.4}`);
+            console.log(`Dégâts infligés à ${boss.name} : ${(this.attackMagic - boss.deffensePhysic) * 0.4}`);
         }
     }
-    //remplacer warrior et barbarian par un tableau d'ennemis
+    //remplacer mechant et boss par un tableau d'ennemis
 }
 class Mage extends Character {
     Fireball() {
         if (this.manaCurrent < 40) {
             console.log(`${this.name} utilise Fireball: apres avoir crié "Fireball!!" le mage lance une boule de feu infligeant des dégâts magiques à un ennemi !`);
             this.manaCurrent -= 40;
-            robber.healthCurrent -= this.attackMagic;
-            console.log(`Dégâts infligés à ${robber.name} : ${this.attackMagic}`);
+            mechants.healthCurrent -= this.attackMagic;
+            console.log(`Dégâts infligés à ${mechants.name} : ${this.attackMagic}`);
         }
     }
-    //remplacer robber par un ennemi passé en paramètre
+    //remplacer mechants par un ennemi passé en paramètre
 }
 class Barbarian extends Character {
     Ragnarok() {
         console.log(`${this.name} utilise Ragnarok: apres avoir crié "Ragnarok!!" le barbare entre dans une rage folle infligent des gros degats malgtre un recule !`);
-        mage.healthCurrent -= (this.attackPhysic - mage.deffensePhysic) * 1.5;
+        mechants.healthCurrent -= (this.attackPhysic - mechants.deffensePhysic) * 1.5;
         this.healthCurrent -= this.healthMax * 0.2;
-        console.log(`Dégâts infligés à ${mage.name} : ${(this.attackPhysic - mage.deffensePhysic) * 1.5}`);
+        console.log(`Dégâts infligés à ${mechants.name} : ${(this.attackPhysic - mechants.deffensePhysic) * 1.5}`);
         console.log(`Dégâts subis par ${this.name} : ${this.healthMax * 0.2}`);
         }
-    //remplacer mage par un ennemi passé en paramètre et trouver condition
+    //remplacer mechants par un ennemi passé en paramètre et trouver condition
 }
 class Priest extends Character {
     Doom() {
@@ -103,8 +103,12 @@ class Mechant extends Character {
         const rand = Math.random() * 100;
         if (rand < 20) {
             console.log(`${this.name} utilise une attaque physique sur le faible !`);
+            paladin.healthCurrent -= (this.attackPhysic - paladin.deffensePhysic);
+            console.log(`Dégâts infligés à ${paladin.name} : ${(this.attackPhysic - paladin.deffensePhysic)}`);
         } else {
                 console.log(`${this.name} utilise une attaque physique sur un adversaire aleatoire !`);
+                paladin.healthCurrent -= (this.attackPhysic - paladin.deffensePhysic);
+                console.log(`Dégâts infligés à ${paladin.name} : ${(this.attackPhysic - paladin.deffensePhysic)}`);
         }
     }
 }
@@ -115,8 +119,12 @@ class Boss extends Character {
         if (rand < 70) {
             if (rand < 20) {
             console.log(`${this.name} utilise une attaque physique sur le faible !`);
+            paladin.healthCurrent -= (this.attackPhysic - paladin.deffensePhysic);
+            console.log(`Dégâts infligés à ${paladin.name} : ${(this.attackPhysic - paladin.deffensePhysic)}`);
             } else {
                 console.log(`${this.name} utilise une attaque physique sur un adversaire aleatoire !`);
+                paladin.healthCurrent -= (this.attackPhysic - paladin.deffensePhysic);
+                console.log(`Dégâts infligés à ${paladin.name} : ${(this.attackPhysic - paladin.deffensePhysic)}`);
             }
         } else {
                 console.log(`${this.name} utilise une attaque physique sur tout les adversaires !`);
@@ -126,8 +134,8 @@ class Boss extends Character {
                 console.log(`Dégâts infligés à ${barbarian.name} : ${(this.attackMagic - barbarian.deffensePhysic) * 0.4}`);
         }
     }
+    // pour les mechants fair choix de la cible en fonction de la vie restante
 }
-
 
     const mage = new Mage("Jeanne d'Arc the Maiden", 15, 30, 50, 20, 120, 120, 200, 200);
     const barbarian = new Barbarian("Brutus the Mad", 60, 80, 0, 20, 120, 120, 0, 0);
@@ -138,3 +146,7 @@ class Boss extends Character {
 
     const mechants = new Mechant("Les Méchants", 50, 50, 0, 10, 500, 500, 0, 0);
     const boss = new Boss("Le très Méchant", 80, 80, 0, 5, 500, 500, 0, 0);
+
+    export const gentilist = [warrior, paladin, mage, barbarian, priest, robber]
+    export const mechantlist = [mechants, boss]
+    export const charalist = [warrior, paladin, mage, barbarian, priest, robber, mechants, boss]
