@@ -1,6 +1,6 @@
-import { teamBoss } from "./fight";
-import { teamHeroes } from "./fight";
-import { teamMechants } from "./fight";
+import { teamBoss } from "./fight.ts";
+import { teamHeroes } from "./fight.ts";
+import { teamMechants } from "./fight.ts";
 
 export class Character {
 
