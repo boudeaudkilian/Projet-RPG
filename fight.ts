@@ -1,5 +1,7 @@
 import { Character } from "./Character.ts"
 import { charalist } from "./Character.ts"
+import { gentilist } from "./Character.ts"
+import { mechantlist } from "./Character.ts"
 
 const Attack = (chara : Character, _chara_list : Character[]) : void => {
     console.log(chara.name)
@@ -32,5 +34,24 @@ const Fight = (chara_list : Character[]) : void => {
         }
     }
 }
+
+const index = 1
+const n = 5
+
+const mechantADupliquer = mechantlist[index]
+
+const mechantsDupliques = Array.from(
+  { length: n },
+  () => ({ ...mechantADupliquer })
+)
+
+export const teamBoss = mechantlist[0]
+export const teamHeroes = gentilist
+export const teamMechants = mechantsDupliques
+
+
+//console.log("heroes :", heroes)
+//console.log("mechants :", mechants)
+//console.log("boss :", boss)
 
 Fight(charalist)
