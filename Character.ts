@@ -107,11 +107,11 @@ class Mechant extends Character {
         console.log(`${this.name} attaque !`);
         const rand = Math.random() * 100;
         if (rand < 20) {
-            console.log(`${this.name} utilise une attaque physique sur le faible !`);
+            console.log(`${this.name} donne un coup de dague a ${teamHeroes[1].name} qui semblais faible !`);
             teamHeroes[1].healthCurrent -= (this.attackPhysic - teamHeroes[1].deffensePhysic);
             console.log(`Dégâts infligés à ${teamHeroes[1].name} : ${(this.attackPhysic - teamHeroes[1].deffensePhysic)}`);
         } else {
-                console.log(`${this.name} utilise une attaque physique sur un adversaire aleatoire !`);
+                console.log(`${this.name} donne un coup de dague a ${teamHeroes[1].name} !`);
                 teamHeroes[1].healthCurrent -= (this.attackPhysic - teamHeroes[1].deffensePhysic);
                 console.log(`Dégâts infligés à ${teamHeroes[1].name} : ${(this.attackPhysic - teamHeroes[1].deffensePhysic)}`);
         }
@@ -119,20 +119,20 @@ class Mechant extends Character {
 }
 
 class Boss extends Character {
-    Attack() {
+    Attackboss() {
         const rand = Math.random() * 100;
         if (rand < 70) {
             if (rand < 20) {
-            console.log(`${this.name} utilise une attaque physique sur le faible !`);
+            console.log(`${this.name} fait tomber son enorme masse sur ${teamHeroes[1].name} qui semblais faible !`);
             teamHeroes[1].healthCurrent -= (this.attackPhysic - teamHeroes[1].deffensePhysic);
             console.log(`Dégâts infligés à ${teamHeroes[1].name} : ${(this.attackPhysic - teamHeroes[1].deffensePhysic)}`);
             } else {
-                console.log(`${this.name} utilise une attaque physique sur un adversaire aleatoire !`);
+                console.log(`${this.name} fait tomber son enorme masse sur ${teamHeroes[1].name} !`);
                 teamHeroes[1].healthCurrent -= (this.attackPhysic - teamHeroes[1].deffensePhysic);
                 console.log(`Dégâts infligés à ${teamHeroes[1].name} : ${(this.attackPhysic - teamHeroes[1].deffensePhysic)}`);
             }
         } else {
-                console.log(`${this.name} utilise une attaque physique sur tout les adversaires !`);
+                console.log(`${this.name} utilise Soul Attaque et fait des degat a tout le monde !`);
                 teamHeroes.forEach(Character => {
                     Character.healthCurrent -= (this.attackMagic - Character.deffensePhysic) * 0.4;
                     console.log(`Dégâts infligés à ${Character.name} : ${(this.attackMagic - Character.deffensePhysic) * 0.4}`);
