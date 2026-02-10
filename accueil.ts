@@ -4,6 +4,11 @@ import { charalist, gentilist } from './Character.ts';
 
 const Dysplaystat = (val : number) : void => {
     console.log("Nom : " + gentilist[val].name)
+    console.log("Attaque Physique : " + gentilist[val].attackPhysic + "  |  Defense Physique : " + gentilist[val].deffensePhysic)
+    console.log("Attaque Spécial : " + gentilist[val].attackPhysic)
+    console.log("Vitesse : " + gentilist[val].speed)
+    console.log("Points de vie actuels : " + gentilist[val].healthCurrent + "  |  Points de vie Max : " + gentilist[val].healthMax)
+    console.log("Mana actuel : " + gentilist[val].manaCurrent + "  |  Mana Max : " + gentilist[val].manaMax)
 }
 
 async function stats() {
