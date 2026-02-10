@@ -5,56 +5,56 @@ import { teamBoss, teamHeroes} from "./teams.ts"
 
 async function Attack(chara : Character, _chara_list : Character[]) : Promise<void> {
     if (chara.name === "Findus the Brave") {
-        console.log("Findus the Brave attaque !")
-        let val = await menu(["Choisissez une action :\n |1|Coup de sabre"], 1)
+        console.log("\n Findus the Brave attaque !")
+        let val = await menu("Choisissez une action :", ["|1|Coup de sabre"], [], 1)
         if (val === 1) {
             warrior.CoupdeSabre(teamBoss)
         }
     } else if (chara.name === "Jeanne d'Arc the Maiden") {
-        console.log("Jeanne d'Arc the Maiden !")
-        let val = await menu(["Choisissez une action :\n |1|Fireball\n |2|Piow"], 2)
+        console.log("\n Jeanne d'Arc the Maiden !")
+        let val = await menu("Choisissez une action :", ["|1|Fireball", "|2|Piow"], [], 2)
         if (val === 1) {
             mage.Fireball(teamBoss)
         } else if (val === 2) {
             mage.Piow(teamBoss)
         }
     } else if (chara.name === "Dabra the Just") {
-        console.log("Dabra the Just attaque !")
-        let val = await menu(["Choisissez une action :\n |1|Demacia\n |2|Slash"], 2)
+        console.log("\n Dabra the Just attaque !")
+        let val = await menu("Choisissez une action :", ["|1|Demacia", "|2|Slash"], [], 2)
         if (val === 1) {
             paladin.Demacia(teamBoss)
         } else if (val === 2) {
             paladin.Slash(teamBoss)
         }
     } else if (chara.name === "Brutus the Mad") {
-        console.log("Brutus the Mad attaque !")
-        let val = await menu(["Choisissez une action :\n |1|Ragnarok\n |2|Hachoire"], 2)
+        console.log("\n Brutus the Mad attaque !")
+        let val = await menu("Choisissez une action :", ["|1|Ragnarok", "|2|Hachoire"], [], 2)
         if (val === 1) {
             barbarian.Ragnarok(teamBoss)
         } else if (val === 2) {
             barbarian.Hachoire(teamBoss)
         }
     } else if (chara.name === "Eve the Kind") {
-        console.log("Eve the Kind attaque !")
-        let val = await menu(["Choisissez une action :\n |1|Doom\n |2|Priere au Divin Kilian"], 2)
+        console.log("\n Eve the Kind attaque !")
+        let val = await menu("Choisissez une action :", ["|1|Doom", "|2|Priere au Divin Kilian"], [], 2)
         if (val === 1) {
             priest.Doom(teamHeroes)
         } else if (val === 2) {
             priest.PriereAuDivinKilian(teamHeroes)
         }
     } else if (chara.name === "Chipper the Swift") {
-        console.log("Chipper the Swift attaque !")
-        let val = await menu(["Choisissez une action :\n |1|Chipper\n |2|Plante Dague"], 2)
+        console.log("\n Chipper the Swift attaque !")
+        let val = await menu("Choisissez une action :", ["|1|Chipper", "|2|Plante Dague"], [], 2)
         if (val === 1) {
             robber.Chipper()
         } else if (val === 2) {
             robber.PlanteDague(teamBoss)
         }
     } else if (chara.name === "Le très Méchant") {
-        console.log("Le très Méchant attaque !")
+        console.log("\n Le très Méchant attaque !")
         boss.Attackboss(teamHeroes)
     } else if (chara.name === "Un Méchant") {
-        console.log("Un Méchant attaque !")
+        console.log("\n Un Méchant attaque !")
         mechants.Attack(teamHeroes)
     }
 }
