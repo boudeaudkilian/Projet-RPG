@@ -49,7 +49,7 @@ class Warrior extends Character {
 }
 
 class Paladin extends Character {
-    Demacia(teamMechants: Character[], teamBoss: Character) {
+    Demacia(teamMechants: Character[]) {
         if (!teamMechants || teamMechants.length === 0) {
             console.log(`${this.name} ne trouve aucun ennemi à attaquer !`);
             return;
@@ -68,12 +68,6 @@ class Paladin extends Character {
                 console.log(`Dégâts infligés à ${mechant.name} : 0`);
             }
         });
-        if ((this.attackMagic - teamBoss.deffensePhysic) * 0.4 > 0) {
-            teamBoss.healthCurrent -= (this.attackMagic - teamBoss.deffensePhysic) * 0.4;
-            console.log(`Dégâts infligés à ${teamBoss.name} : ${(this.attackMagic - teamBoss.deffensePhysic) * 0.4}`);
-        } else {
-            console.log(`Dégâts infligés à ${teamBoss.name} : 0`);
-        }
     }
     
     Slash(teamMechants: Character[]) {
@@ -218,14 +212,14 @@ class Robber extends Character {
         }
     }
     
-    PlanteDague(mechant: Character) {
+    PlanteDague(mechant: Character[]) {
         console.log(`${this.name} utilise Plante Dague: apres avoir crié "Plante Dague!!" le voleur plante une dague dans un ennemi !`);
-        const degats = (this.attackPhysic - mechant.deffensePhysic) * 3;
+        const degats = (this.attackPhysic - mechant[0].deffensePhysic) * 3;
         if (degats < 0) {
-            console.log(`Dégâts infligés à ${mechant.name} : 0`);
+            console.log(`Dégâts infligés à ${mechant[0].name} : 0`);
         } else {
-            mechant.healthCurrent -= degats;
-            console.log(`Dégâts infligés à ${mechant.name} : ${degats}`);
+            mechant[0].healthCurrent -= degats;
+            console.log(`Dégâts infligés à ${mechant[0].name} : ${degats}`);
         }
     }
 }
