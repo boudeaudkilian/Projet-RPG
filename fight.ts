@@ -21,16 +21,14 @@ const Speed_def = (chara_list : Character[], indice_spe : number) : Character[] 
     }
 }
 
-const Fight = (chara_list : Character[]) : void => {
+export async function Fight(chara_list : Character[]) : Promise<void> {
     let indice_spe = 100
     for (indice_spe = 100; indice_spe > 0; indice_spe--) {
         const buf = Speed_def(chara_list, indice_spe)
         if (buf) {
             for (const element of buf) {
-                Attack(element, chara_list)
+                await Attack(element, chara_list)
             }
         }
     }
 }
-
-Fight(charalist)
