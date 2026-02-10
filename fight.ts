@@ -1,6 +1,7 @@
 import { Character } from "./Character.ts"
 import { charalist } from "./Character.ts"
 
+
 const Attack = (chara : Character, _chara_list : Character[]) : void => {
     console.log(chara.name)
 }
@@ -32,3 +33,6 @@ export async function Fight(chara_list : Character[]) : Promise<void> {
         }
     }
 }
+//console.log("heroes :", heroes)
+//console.log("mechants :", mechants)
+//console.log("boss :", boss)
