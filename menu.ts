@@ -13,7 +13,7 @@ export const menu = (intro : string, option : string[],txt : string[], nb_ansers
         quest += "\n"
     }
     return new Promise((resolve) => {
-    rl.question( "\n\n\n" + quest + "\n\n\n", (answer) => {
+    rl.question( "\n\n" + quest + "\n\n", (answer) => {
         for (let i = 1; i < 10; i++) {
             console.log("\n")
         }
