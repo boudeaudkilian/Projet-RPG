@@ -1,4 +1,5 @@
 import { Character } from "./Character.ts"
+import { charalist } from "./Character.ts"
 
 const Attack = (chara : Character, _chara_list : Character[]) : void => {
     console.log(chara.name)
