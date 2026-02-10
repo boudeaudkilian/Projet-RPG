@@ -47,7 +47,7 @@ const Figthteste = (charalist : Character[]) => {
     barbarian.Hachoire(teamMechants)
     
     console.log(`\nCompétences de prêtre :`)
-    priest.PriereauDivinKilian(teamHeroes)
+    priest.PriereAuDivinKilian(teamHeroes)
     
     console.log(`\nCompétences de voleur :`)
     robber.PlanteDague(mechants)
