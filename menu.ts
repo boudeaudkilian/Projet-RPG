@@ -8,6 +8,9 @@ export const menu = (txt : string[], nb_ansers : number) : Promise<number> => {
     let ret_value = 0
     return new Promise((resolve) => {
     rl.question( "\n\n\n" + txt[0] + "\n\n\n", (answer) => {
+        for (let i = 1; i < 10; i++) {
+            console.log("\n")
+        }
         switch(answer.toLowerCase()) {
         case '1': 
             if (nb_ansers >= 1) {
@@ -66,6 +69,9 @@ export const menu = (txt : string[], nb_ansers : number) : Promise<number> => {
         default:
             console.log('Invalid answer!');
             ret_value = -1;
+        }
+        for (let i = 1; i < 3; i++) {
+            console.log("\n")
         }
         rl.close();
         resolve(ret_value)
