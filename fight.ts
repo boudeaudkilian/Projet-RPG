@@ -86,7 +86,3 @@ export async function Fight(chara_list : Character[]) : Promise<void> {
         }
     }
 }
-
-//console.log("heroes :", heroes)
-//console.log("mechants :", mechants)
-//console.log("boss :", boss)

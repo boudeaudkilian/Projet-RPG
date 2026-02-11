@@ -32,7 +32,7 @@ async function Accueil() {
     while (true) {
         const val = await menu("Vous arrivez à la taverne et, après une petite chope, vous décidez ce que vous allez faire ensuite :",
             ["|1| : Faire le point sur votre équipement","|2| : Se reposer (15 po)","|3] : Partir à l'avanture !","|4| : Rentrer au bercail (Fermer le jeu)"],
-            ["Display stats à venir","Vous vous reposez","Des ennemis apparaissent","Merci d'avoir joué à la prochaine"], 4)
+            ["Display stats à venir","Desoler vous etes pauvre","Des ennemis apparaissent","Merci d'avoir joué à la prochaine"], 4)
         if (val == 1)
             await stats()
         if (val == 3) {

@@ -84,7 +84,3 @@ export const menu = (intro : string, option : string[],txt : string[], nb_ansers
     });
     });
 }
-
-// menu(["Bienvenue dans le Jeu, pas grand chose a voir pour le moment, | 1 : Restez | 2 : Partir |  ", 
-//     'Bah ça change pas que y a rien, Au revoir', 
-//     'Au revoir'], 3)
